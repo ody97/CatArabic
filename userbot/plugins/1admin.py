@@ -157,7 +157,7 @@ async def promote(event):
     )
     user, rank = await get_user_from_event(event)
     if not rank:
-        rank = "Admin"
+        rank = "مشرف المجموعة ✯"
     if not user:
         return
     catevent = await edit_or_reply(event, "**⌔∮ جاري رفعه مشرف في المجموعة ✓**")
@@ -201,7 +201,7 @@ async def demote(event):
         delete_messages=None,
         pin_messages=None,
     )
-    rank = "admin"
+    rank = "مشرف المجموعة ✯"
     try:
         await event.client(EditAdminRequest(event.chat_id, user.id, newrights, rank))
     except BadRequestError:
